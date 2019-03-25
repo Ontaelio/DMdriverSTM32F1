@@ -34,14 +34,14 @@ MOSI - A7
 SCK - A5
 
 ###### SPI2
-- MOSI - B15
+MOSI - B15
 
-- SCK - B13
+SCK - B13
 
 ###### SPI3*
-- MOSI - B5
+MOSI - B5
 
-- SCK - B3
+SCK - B3
 
 (*) SPI3 pins (if SPI3 is present) are used by other communication protocols by default. You'll need to turn these protocols off by yourself. I do not recommend using SPI3, if you really really need it you presumably know what you're doing and will be able to configure it accordingly.
 
