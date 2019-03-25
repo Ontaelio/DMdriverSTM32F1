@@ -2,7 +2,7 @@ DM631, DM632, DM633, DM634 library for STM32F103
 
 The library is GCC-compatible and doesn't rely on any IDE-specific lexics. The only header file needed is the standard stdint.h. All the port manipulation is done 'manually'.
 
-Usage: same as Atmega328 version (details here), except the DMdriver object declaration:
+Usage: same as Atmega328 version (details [here](https://github.com/Ontaelio/DMdriver)), except the DMdriver object declaration:
 
 **DMdriver** ObjName (uint8_t **Driver**, uint8_t **Number** [, uint32_t **LatchPort**, uint8_t **LatchPin** [, uint32_t **SPI_addr**]])
 
