@@ -1,6 +1,6 @@
 DM631, DM632, DM633, DM634 library for STM32F103
 
-The library is GCC-compatible and doesn't rely on any IDE-specific lexics. The only header file needed is the standard stdint.h. All the port manipulation is done 'manually'.
+This library was tested with the Arduino IDE (STM32duino) and Atollic TrueStudio for STM32. It should work with other GCC-based IDEs, frameworks, toolchains, whatever, as it doesn't use any STM32duino/Maple specific port addressing; nor does it use the STM-approved approach. 
 
 Usage: same as Atmega328 version (details [here](https://github.com/Ontaelio/DMdriver)), except the DMdriver object declaration:
 
@@ -45,6 +45,6 @@ SCK - B3
 
 (*) SPI3 pins (if SPI3 is present) are used by other communication protocols by default. You'll need to turn these protocols off by yourself. I do not recommend using SPI3, if you really really need it you presumably know what you're doing and will be able to configure it accordingly.
 
-This library was tested with the Arduino IDE + STM32duino. It should work with other GCC-based IDEs, frameworks, toolchains, whatever, as it doesn't use any STM32duino/Maple specific port addressing; nor does it use the STM-approved approach. If you need to change something inside the library, check the #defines at the start of the DMdriverSTM32F1.cpp file and the comments in the init() function.
+If you need to change something inside the library, check the #defines at the start of the DMdriverSTM32F1.cpp file and the comments in the init() function.
 
 
