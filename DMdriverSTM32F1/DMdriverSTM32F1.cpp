@@ -1,5 +1,5 @@
 /*
- * This is the main file of the Arduino library for DM63x LED driver chips
+ * This is the main file of the STM32F103x library for DM63x LED driver chips
  * (c) 2016 Dmitry Reznkov, dmitry@ultiblink.com
  * The library is free software under GNU General Public License.
  * You can use it any way you wish, but NO WARRANTY is provided.
@@ -7,7 +7,9 @@
  * Special thanks: Alex Leone and his excellent Arduino TLC5940 library
  * that served as an inspiration for this one.
 */
-#include "Arduino.h"
+//#include "Arduino.h"
+#include "stdint.h"
+//#include "string.h"
 #include "DMdriverSTM32F1.h"
 
 // A bunch of addresses to avoid using HALs and stuff
@@ -483,7 +485,7 @@ _SCKPORT_ (SCKport) |= SCKmode; // SCK back to SPI mode
 
 /*** shift GBC data to the drivers */
 /*** (each DM gets one byte; 7 upper bits control GB data, LSB should be 0 (o/s flag) */
-for (byte count=0; count<DMnum; count++) {dm_shift(bri<<1);}
+for (uint8_t count=0; count<DMnum; count++) {dm_shift(bri<<1);}
 
 while (_SPIREG_(_SPI_SR) & BSY); //finish the transmission
 LAT_pulse();
