@@ -10,7 +10,9 @@
 #ifndef DM_library
 #define DM_library
 
-#include "Arduino.h"
+//#include "Arduino.h"
+#include "stdint.h"
+//#include "string.h"
 #include "DMconfig.h"
 
 
@@ -35,8 +37,8 @@ class DMdriver
 {
  public:
    DMdriver(uint8_t Driver, uint8_t Number, uint32_t LatchPort = __PORTB, uint8_t LatchPin = 0, uint32_t SPI_addr = __SPI1);
-   DMLEDTABLE* ledTable; // led lookup table, type defined by DMLEDTABLE
-   void init(DMLEDTABLE *table = NULL); // initialise the object and SPI interface  
+   DMLEDTABLE* ledTable; // led lookup table, type defined by DMLEDTABLE in config
+   void init(DMLEDTABLE *table = (DMLEDTABLE *)0); //aka NULL; initialise the object and SPI interface with LED placement table if needed
    void setPoint(uint16_t pixNum, uint16_t pixVal); // sets single LED
    uint16_t getPoint(uint16_t pixNum); // returns the value of a single LED
    void setRGBpoint(uint16_t LED, uint16_t red, uint16_t green, uint16_t blue); // sets an RGB LED on an RGB-only board
