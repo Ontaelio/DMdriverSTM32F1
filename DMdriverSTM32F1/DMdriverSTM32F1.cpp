@@ -517,9 +517,6 @@ LAT_pulse();
 
 sendAll(); //restore GS data
 
-for (uint8_t count=0; count<DMnum; count++)
-{dm_shift((bri[DMnum-count-1]<<1));}
-
 }
 
 uint16_t DMdriver::getChainValue (uint16_t pixNum)
