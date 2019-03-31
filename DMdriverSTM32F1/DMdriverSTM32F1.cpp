@@ -52,7 +52,7 @@
 #define _IDR  0x08
 #define _ODR  0x0C
 
-#define _SPI1_(mem_offset) (*(volatile uint32_t *)(0x40013000 + (mem_offset)))
+//#define _SPI1_(mem_offset) (*(volatile uint32_t *)(0x40013000 + (mem_offset)))
 
 #define _SPIREG_(mem_offset) (*(volatile uint32_t *)(SPIreg + (mem_offset)))
 
@@ -417,7 +417,7 @@ void DMdriver::sendAll()
 	    dm_shift(pixel[k]);
 	} while (k);
 	
-	while (_SPI1_(_SPI_SR) & BSY); // finish transmission
+	while (_SPIREG_(_SPI_SR) & BSY); // finish transmission
 	
 	LAT_pulse();
 }
